@@ -32,6 +32,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      {/* SEO JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -60,6 +61,8 @@ export default function App() {
           }),
         }}
       />
+
+      {/* Top bar */}
       <div className="border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <Container>
           <div className="flex items-center justify-between py-3">
@@ -84,6 +87,7 @@ export default function App() {
         </Container>
       </div>
 
+      {/* Hero */}
       <header id="top" className="relative overflow-hidden bg-gradient-to-b from-teal-50 to-white">
         <Container>
           <div className="grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
@@ -142,6 +146,7 @@ export default function App() {
         </Container>
       </header>
 
+      {/* Services */}
       <Section
         id="services"
         eyebrow="What we do"
@@ -170,3 +175,143 @@ export default function App() {
         </div>
         <p className="mt-6 text-center text-sm text-gray-600">
           Don’t see what you need? <a href="#contact" className="font-medium text-teal-700 underline underline-offset-4">Ask us</a> — we’ll help or refer to a trusted specialist.
+        </p>
+      </Section>
+
+      {/* About */}
+      <Section
+        id="about"
+        eyebrow="Meet your dentist"
+        title="Sujin ____ DMD"
+        subtitle="A gentle, detail-oriented clinician dedicated to making dentistry comfortable and clear for every patient."
+      >
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div className="aspect-square overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <img
+              alt="Dr. Sujin — Gainesville dentist"
+              src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-base leading-relaxed text-gray-700">
+              Dr. Sujin is known for a calm chairside manner and meticulous work. She trained in modern restorative and cosmetic techniques and believes great dentistry starts with education and prevention. Outside the office, you’ll find her enjoying Gainesville’s trails and local coffee spots.
+            </p>
+            <ul className="mt-6 grid gap-3 text-sm text-gray-700 sm:grid-cols-2">
+              <li className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 text-teal-600" /> DMD — School / Year (update)</li>
+              <li className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 text-teal-600" /> Professional memberships (ADA, FDA, etc.)</li>
+              <li className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 text-teal-600" /> Hospital/clinic affiliations (optional)</li>
+              <li className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 text-teal-600" /> Languages spoken (optional)</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Insurance / Financing */}
+      <Section
+        id="insurance"
+        eyebrow="Affordable care"
+        title="Insurance, membership, and financing"
+        subtitle="We keep billing simple and transparent so you can focus on your oral health."
+      >
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold">We accept</h3>
+            <p className="mt-2 text-sm text-gray-600">Most major PPO plans. We’ll verify benefits and estimate co-pays before treatment.</p>
+            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
+              <li>Electronic claims & pre-authorizations</li>
+              <li>Complimentary benefit checks</li>
+              <li>Out-of-network estimates provided</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold">In-house membership</h3>
+            <p className="mt-2 text-sm text-gray-600">No insurance? Join our plan for routine cleanings, exams, X-rays, and member-only discounts.</p>
+            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
+              <li>No deductibles or waiting periods</li>
+              <li>Save 15–20% on most treatments</li>
+              <li>Family options available</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold">Flexible payments</h3>
+            <p className="mt-2 text-sm text-gray-600">We offer transparent pricing, payment plans, HSA/FSA support, and third-party financing.</p>
+            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
+              <li>All major cards, HSA/FSA</li>
+              <li>CareCredit® or similar financing</li>
+              <li>Clear estimates before care</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Testimonials */}
+      <Section
+        id="testimonials"
+        eyebrow="Patients say…"
+        title="Five-star experiences"
+        subtitle="Real reviews from people who trust us with their smiles."
+      >
+        <div className="grid gap-6 md:grid-cols-3">
+          {[`“Incredibly gentle and thorough. Best cleaning I’ve had in years.”`,
+            `“They explained every step and made me feel comfortable the whole time.”`,
+            `“Beautiful office, zero pressure, honest recommendations.”`].map((quote, i) => (
+            <figure key={i} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <blockquote className="text-balance text-sm text-gray-800">{quote}</blockquote>
+              <figcaption className="mt-3 text-xs text-gray-500">— Google Reviewer</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Section>
+
+      {/* Contact */}
+      <Section
+        id="contact"
+        eyebrow="Get in touch"
+        title="Call, text, or request an appointment"
+        subtitle="We typically reply within one business day. For emergencies, please call."
+      >
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold">Contact details</h3>
+            <ul className="mt-4 space-y-3 text-sm text-gray-700">
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-teal-600" /><a href={`tel:${phone.replace(/[^\\d]/g, "")}`} className="font-medium hover:underline">{phone}</a></li>
+              <li className="flex items-center gap-2"><MessageSquare className="h-4 w-4 text-teal-600" /><a href={`mailto:${email}`} className="hover:underline">{email}</a></li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-teal-600" /><span>{address}</span></li>
+              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-teal-600" /><span>Mon–Thu 8:00–5:00, Fri 8:00–1:00</span></li>
+            </ul>
+            <div className="mt-6 h-64 w-full overflow-hidden rounded-2xl bg-gray-100">
+              <img
+                alt="Map placeholder"
+                src="https://images.unsplash.com/photo-1502920917128-1aa500764b8a?q=80&w=1200&auto=format&fit=crop"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <form
+            className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
+            method="POST"
+            action="#"
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks! We’ll be in touch soon.");
+            }}
+            aria-describedby="hipaa-note"
+          >
+            <h3 className="text-lg font-semibold">Request an appointment</h3>
+            <div className="mt-4 grid gap-4">
+              <label className="block text-sm">
+                <span className="mb-1 inline-block font-medium">Full name</span>
+                <input required name="name" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
+              </label>
+              <label className="block text-sm">
+                <span className="mb-1 inline-block font-medium">Phone</span>
+                <input required name="phone" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
+              </label>
+              <label className="block text-sm">
+                <span className="mb-1 inline-block font-medium">Email</span>
+                <input type="email" name="email" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
+              </label>
+              <label className="block text-sm">
+               
