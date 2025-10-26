@@ -289,29 +289,64 @@ export default function App() {
             </div>
           </div>
 
-          <form
-            className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
-            method="POST"
-            action="#"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks! We’ll be in touch soon.");
-            }}
-            aria-describedby="hipaa-note"
-          >
-            <h3 className="text-lg font-semibold">Request an appointment</h3>
-            <div className="mt-4 grid gap-4">
-              <label className="block text-sm">
-                <span className="mb-1 inline-block font-medium">Full name</span>
-                <input required name="name" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
-              </label>
-              <label className="block text-sm">
-                <span className="mb-1 inline-block font-medium">Phone</span>
-                <input required name="phone" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
-              </label>
-              <label className="block text-sm">
-                <span className="mb-1 inline-block font-medium">Email</span>
-                <input type="email" name="email" className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200" />
-              </label>
-              <label className="block text-sm">
-               
+         <form
+  className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
+  method="POST"
+  action="#"
+  onSubmit={(e) => {
+    e.preventDefault();
+    alert("Thanks! We’ll be in touch soon.");
+  }}
+  aria-describedby="hipaa-note"
+>
+  <h3 className="text-lg font-semibold">Request an appointment</h3>
+  <div className="mt-4 grid gap-4">
+    <label className="block text-sm">
+      <span className="mb-1 inline-block font-medium">Full name</span>
+      <input
+        required
+        name="name"
+        className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200"
+      />
+    </label>
+
+    <label className="block text-sm">
+      <span className="mb-1 inline-block font-medium">Phone</span>
+      <input
+        required
+        name="phone"
+        className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200"
+      />
+    </label>
+
+    <label className="block text-sm">
+      <span className="mb-1 inline-block font-medium">Email</span>
+      <input
+        type="email"
+        name="email"
+        className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200"
+      />
+    </label>
+
+    <label className="block text-sm">
+      <span className="mb-1 inline-block font-medium">How can we help?</span>
+      <textarea
+        name="message"
+        rows={4}
+        className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200"
+        placeholder="Cleaning, toothache, consultation… (Please do not include sensitive health info.)"
+      />
+    </label>
+
+    <button
+      type="submit"
+      className="inline-flex w-full items-center justify-center rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+    >
+      Submit request
+    </button>
+
+    <p id="hipaa-note" className="text-xs text-gray-500">
+      Please avoid sharing protected health information (PHI) in this form. We’ll follow up by phone to discuss details.
+    </p>
+  </div>
+</form>
